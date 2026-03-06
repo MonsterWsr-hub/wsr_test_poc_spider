@@ -1,1 +1,53 @@
-# CVE-2018-8284-Sharepoint-RCE
+
+# CVE-2026-6111 漏洞扫描器
+
+这是一个简单的 Python 脚本，用于扫描网站以检查是否存在 CVE-2026-6111 漏洞。它发送修改过的请求到目标 URL，并检查响应中是否存在该漏洞。
+
+## 环境要求
+
+- Python 3
+- requests 库
+- tqdm 库
+
+你可以使用 pip 安装所需的库：
+
+pip install requests tqdm
+
+
+## 使用方法
+
+你可以使用以下命令运行脚本：
+
+python CVE-2026-6111.py -u <URL> [-p <proxy>]
+
+mathematica
+
+
+或者，你可以指定包含目标 URL 列表的文件：
+
+python CVE-2026-6111.py -f <file_path> [-p <proxy>]
+
+
+- `-u, --url`: 指定单个目标 URL。
+- `-f, --file`: 指定包含目标 URL 列表的文件。
+- `-p, --proxy`: 如果需要，指定代理服务器。
+
+## 示例
+
+扫描单个 URL：
+
+python CVE-2026-6111.py -u http://example.com
+
+
+从文件中批量扫描 URL：
+
+python CVE-2026-6111.py -f urls.txt
+
+
+## 输出
+
+脚本将显示一个进度条，指示扫描的进度。如果在某个 URL 中发现漏洞，它将打印一个成功消息，并将该 URL 保存到 `exploit.txt` 文件中。
+
+## 免责声明
+
+此脚本仅用于教育目的。请负责任地使用，并自行承担风险。
